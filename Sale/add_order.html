@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tender Delivery - Add Order</title>
-    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -59,26 +59,19 @@
       </div>
       
       <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxoYKFZ82qxtka4xfOC7ra7HKimiHLLF6aukwqD6lCSKg4q8dds4w7B2Updo0WxOPGHmw/exec' ;
-        const form = document.forms['google-sheet'] ;
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => console.log("Thanks for Contacting us..! We Will Contact You Soon..."))
-            .catch(error => console.error('Error!', error.message))
-        })
+        
       </script>
 
+<script src="../Js/addOrder.js"></script>
     <script src="../Js/getData.js"></script>
-    <script src="../Js/addOrder.js"></script>
+    <script src="../Js/sendData.js"></script>
 </body>
 
 <!-- MDB ESSENTIAL -->
-  <script type="text/javascript" src="../Js/mdb.min.js"></script>
+  <script type="text/javascript" src="../js/mdb.min.js"></script>
   <!-- Google API -->
-  <script src="https://apis.google.com/Js/api.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
   <!-- easyData -->
-  <script type="text/javascript" src="../Js/easyData-google-sheets.js"></script>
+  <script type="text/javascript" src="../js/easyData-google-sheets.js"></script>
 
 </html>
