@@ -1,0 +1,151 @@
+class User {
+    constructor(id, userName, salary) {
+        this.id = id;
+        this.userName = userName;
+        this.salary = salary;
+    }
+}
+
+let userOne = new User(1, 2, 3) ;
+
+
+
+console.log(userOne instanceof User)
+
+console.log(userOne.constructor === User)
+
+
+
+
+
+class User {
+    // Static Property 
+    static count = 0 ;
+    constructor (id, userName, salary) {
+        // Property
+        this.id = id ;
+        this.userName = userName || 'UnKnown' ;
+        this.salary = salary <= 30000 ? salary += 20000 : salary ;
+        
+        this.massg = function () {
+            return `Hello : ${this.userName} - Yor Salary Is ${this.salary}` ;
+        } ;        
+    } ;
+
+    // Method
+    getInfo() {
+        return `<h3>${this.userName}</h3><p>${this.salary}</p>`
+    } ;
+
+    upDateName(newName) {
+        return this.userName = newName ;
+    }
+} ;
+
+
+let userOne = new User(101, "Abdalrhmn Roston", 30000) ;
+let userTow = new User(102, 'Mohamed Hamde', 50000) ;
+
+console.log(userOne.upDateName('Salah')) ;
+console.log(userOne.userName) ;
+
+console.log(userOne.count) ;
+console.log(User.count) ;
+
+
+
+
+
+class User {
+    // Static Property 
+    static count = 0 ;
+    constructor (id, userName, salary) {
+        // Property
+        this.id = id ;
+        this.userName = userName || 'UnKnown' ;
+        this.salary = salary <= 30000 ? salary += 20000 : salary ;
+        User.count++ ;
+    } ;
+
+    // Static Method
+    static sayHello() {
+        return `Hello From Class` ;
+    } ;
+
+    static countMembers() {
+        return `${this.count} Members Created` ;
+    } ;
+
+} ;
+
+
+let userOne = new User(101, 'Abdalrhmn Roston', 5000) ;
+let userTow = new User(102, 'Moaaz Roston', 5000) ;
+let userThree = new User(103, 'Salah', 5000) ;
+
+// console.log(userOne.count) ;
+console.log(User.count) ;
+
+// console.log(userOne.sayHello()) ;
+console.log(User.sayHello()) ;
+
+console.log(User.countMembers()) ;
+
+
+
+
+
+
+
+
+
+
+
+class User {
+    
+    constructor (id, userName) {
+        this.id = id ;
+        this.userName = userName ;
+    } ;
+
+    sayHello () {
+        return `Hello ${this.userName}` ;
+    } ;
+
+} ;
+
+
+class Admin extends User {
+    
+    constructor (id, userName, permissions) {
+        super(id, userName) ;
+        this.permissions = permissions ;
+    } ;
+    
+} ;
+
+
+class Superman extends Admin {
+    
+    constructor(id, userName, permissions, title) {
+        super(id, userName, permissions) ;
+        this.title = title ;
+    } ;
+
+    helloAdmin () {
+        return `Hello Yor Amdin` ;
+    }
+} ;
+
+
+
+
+let userOne = new User(101, 'Abdalrhmn Roston') ;
+let adminOne = new User(102, 'Mohamed Roston', 1) ;
+
+// console.log(userOne.sayHello()) ;
+
+let superManOne = new Superman(103, 'Abdalrhmn Roston', 1, 'Interponor') ;
+
+console.log(superManOne.helloAdmin()) ;
+console.log(superManOne.sayHello()) ;
